@@ -63,7 +63,7 @@ namespace Peeper
             peeperItem.restingRotation = new Vector3(0f, 0f, 0f);
             peeperItem.rotationOffset = new Vector3(100f, 0f, 225f);
             peeperItem.positionOffset = new Vector3(-1f, 0.1f, 0.9f);
-            peeperItem.weight = 1f + (Config.WEIGHT / 100f);
+            peeperItem.weight = 1f + ((Config.WEIGHT - 1) / 100f);
             peeperItem.twoHanded = Config.TWO_HANDED;
             peeperItem.itemIcon = bundle.LoadAsset<Sprite>(root + "Icon.png");
             peeperItem.spawnPrefab = bundle.LoadAsset<GameObject>(root + "Peeper.prefab");
