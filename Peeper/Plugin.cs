@@ -98,10 +98,7 @@ namespace Peeper
         }
         public static string GetDisplayInfo()
         {
-            string hands = Config.TWO_HANDED.Value ? "two" : "one";
-            return $"DIVING KIT - ${Config.PRICE.Value}\n\n" +
-                "Breath underwater.\n" +
-                $"Weights {Mathf.RoundToInt((Config.WEIGHT.Value - 1) * 100)} lbs and is {hands} handed.";
+            return "Looks at Coil-Heads for you.\n";
         }
     }   
 }
