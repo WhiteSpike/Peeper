@@ -23,7 +23,6 @@ namespace Peeper
         internal static readonly ManualLogSource mls = BepInEx.Logging.Logger.CreateLogSource(Metadata.NAME);
 
         public new static PluginConfig Config;
-        internal static GameObject networkPrefab;
 
         void Awake()
         {
