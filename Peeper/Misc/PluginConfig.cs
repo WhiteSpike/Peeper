@@ -1,7 +1,6 @@
 ﻿using BepInEx.Configuration;
 using CSync.Extensions;
 using CSync.Lib;
-using Peeper.Behaviour;
 using Peeper.Util;
 using System.Runtime.Serialization;
 
@@ -20,7 +19,7 @@ namespace Peeper.Misc
         [field: SyncedEntryField] public SyncedEntry<int> HIGHEST_SALE_PERCENTAGE { get; set; }
         public PluginConfig(ConfigFile cfg) : base(Metadata.GUID)
         {
-            string topSection = PeeperBehaviour.ITEM_NAME;
+            string topSection = Plugin.ITEM_NAME;
 
             PRICE = cfg.BindSyncedEntry(topSection, Constants.PEEPER_PRICE_KEY, Constants.PEEPER_PRICE_DEFAULT, Constants.PEEPER_PRICE_DESCRIPTION);
             WEIGHT = cfg.BindSyncedEntry(topSection, Constants.PEEPER_WEIGHT_KEY, Constants.PEEPER_WEIGHT_DEFAULT, Constants.PEEPER_WEIGHT_DESCRIPTION);

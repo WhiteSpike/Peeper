@@ -39,8 +39,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>$(LC_PATH)\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="InteractiveTerminalAPI">
-      <HintPath>$(LC_PLUGIN_PATH)\WhiteSpike-Interactive_Terminal_API\InteractiveTerminalAPI\InteractiveTerminalAPI.dll</HintPath>
+    <Reference Include="CustomItemBehaviourLibrary">
+      <HintPath>$(LC_PLUGIN_PATH)\WhiteSpike-CustomItemBehaviourLibrary\CustomItemBehaviourLibrary\CustomItemBehaviourLibrary.dll</HintPath>
+      <Private>false</Private>
     </Reference>
   </ItemGroup>
   <Target Name="NetcodePatch" AfterTargets="PostBuildEvent">

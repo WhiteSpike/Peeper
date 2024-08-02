@@ -10,14 +10,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using Peeper.Patches;
 namespace Peeper
 {
     [BepInPlugin(Metadata.GUID,Metadata.NAME,Metadata.VERSION)]
     [BepInDependency("com.sigurd.csync")]
     [BepInDependency("evaisa.lethallib")]
+    [BepInDependency("com.github.WhiteSpike.CustomItemBehaviourLibrary")]
     public class Plugin : BaseUnityPlugin
     {
+        internal const string ITEM_NAME = "Peeper";
         internal static readonly Harmony harmony = new(Metadata.GUID);
         internal static readonly ManualLogSource mls = BepInEx.Logging.Logger.CreateLogSource(Metadata.NAME);
 
@@ -72,7 +73,7 @@ namespace Peeper
             peeperItem.pocketSFX = bundle.LoadAsset<AudioClip>(root + "Pocket.ogg");
             peeperItem.throwSFX = bundle.LoadAsset<AudioClip>(root + "Throw.ogg");
             peeperItem.highestSalePercentage = Config.HIGHEST_SALE_PERCENTAGE;
-            peeperItem.itemName = PeeperBehaviour.ITEM_NAME;
+            peeperItem.itemName = ITEM_NAME;
             peeperItem.itemSpawnsOnGround = true;
             peeperItem.isConductiveMetal = Config.CONDUCTIVE;
             peeperItem.requiresBattery = false;
@@ -86,18 +87,8 @@ namespace Peeper
 
             TerminalNode infoNode = SetupInfoNode();
             Items.RegisterShopItem(shopItem: peeperItem, itemInfo: infoNode, price: peeperItem.creditsWorth);
-            PatchMainVersion();
 
             mls.LogInfo($"{Metadata.NAME} {Metadata.VERSION} has been loaded successfully.");
-        }
-        internal static void PatchMainVersion()
-        {
-            PatchEnemies();
-        }
-        static void PatchEnemies()
-        {
-            harmony.PatchAll(typeof(SpringManAIPatcher));
-            Plugin.mls.LogInfo("Enemies have been patched");
         }
         internal static TerminalNode SetupInfoNode()
         {

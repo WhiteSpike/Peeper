@@ -9,9 +9,9 @@ namespace Peeper.Util
 
         #region Peeper
 
-        internal const string PEEPER_PRICE_KEY = $"{PeeperBehaviour.ITEM_NAME} price";
+        internal const string PEEPER_PRICE_KEY = $"{Plugin.ITEM_NAME} price";
         internal const int PEEPER_PRICE_DEFAULT = 500;
-        internal const string PEEPER_PRICE_DESCRIPTION = $"Price for {PeeperBehaviour.ITEM_NAME}.";
+        internal const string PEEPER_PRICE_DESCRIPTION = $"Price for {Plugin.ITEM_NAME}.";
 
         internal const string PEEPER_WEIGHT_KEY = "Item weight";
         internal const int PEEPER_WEIGHT_DEFAULT = 15;
@@ -37,7 +37,7 @@ namespace Peeper.Util
         internal const int PEEPER_HIGHEST_SALE_PERCENTAGE_DEFAULT = 50;
         internal const string PEEPER_HIGHEST_SALE_PERCENTAGE_DESCRIPTION = "Maximum percentage of sale allowed when this item is selected for a sale.";
 
-        internal static readonly string PEEPER_SCAN_NODE_KEY = string.Format(ITEM_SCAN_NODE_KEY_FORMAT, PeeperBehaviour.ITEM_NAME);
+        internal static readonly string PEEPER_SCAN_NODE_KEY = string.Format(ITEM_SCAN_NODE_KEY_FORMAT, Plugin.ITEM_NAME);
         #endregion
     }
 }
