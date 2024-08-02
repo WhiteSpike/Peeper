@@ -7,8 +7,6 @@ namespace Peeper.Util
         internal const bool ITEM_SCAN_NODE_DEFAULT = true;
         internal const string ITEM_SCAN_NODE_DESCRIPTION = "Shows a scan node on the item when scanning";
 
-        #region Peeper
-
         internal const string PEEPER_PRICE_KEY = $"{Plugin.ITEM_NAME} price";
         internal const int PEEPER_PRICE_DEFAULT = 500;
         internal const string PEEPER_PRICE_DESCRIPTION = $"Price for {Plugin.ITEM_NAME}.";
@@ -38,6 +36,5 @@ namespace Peeper.Util
         internal const string PEEPER_HIGHEST_SALE_PERCENTAGE_DESCRIPTION = "Maximum percentage of sale allowed when this item is selected for a sale.";
 
         internal static readonly string PEEPER_SCAN_NODE_KEY = string.Format(ITEM_SCAN_NODE_KEY_FORMAT, Plugin.ITEM_NAME);
-        #endregion
     }
 }
