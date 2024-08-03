@@ -17,6 +17,7 @@ namespace Peeper.Misc
         [field: SyncedEntryField] public SyncedEntry<bool> GRABBED_BEFORE_START { get; set; }
         [field: SyncedEntryField] public SyncedEntry<bool> CONDUCTIVE { get; set; }
         [field: SyncedEntryField] public SyncedEntry<int> HIGHEST_SALE_PERCENTAGE { get; set; }
+        [field: SyncedEntryField] public SyncedEntry<int> MAXIMUM_RANGE {  get; set; }
         public PluginConfig(ConfigFile cfg) : base(Metadata.GUID)
         {
             string topSection = Plugin.ITEM_NAME;
@@ -29,6 +30,7 @@ namespace Peeper.Misc
             CONDUCTIVE = cfg.BindSyncedEntry(topSection, Constants.PEEPER_CONDUCTIVE_KEY, Constants.PEEPER_CONDUCTIVE_DEFAULT, Constants.PEEPER_CONDUCTIVE_DESCRIPTION);
             GRABBED_BEFORE_START = cfg.BindSyncedEntry(topSection, Constants.PEEPER_GRABBED_BEFORE_START_KEY, Constants.PEEPER_GRABBED_BEFORE_START_DEFAULT, Constants.PEEPER_GRABBED_BEFORE_START_DESCRIPTION);
             HIGHEST_SALE_PERCENTAGE = cfg.BindSyncedEntry(topSection, Constants.PEEPER_HIGHEST_SALE_PERCENTAGE_KEY, Constants.PEEPER_HIGHEST_SALE_PERCENTAGE_DEFAULT, Constants.PEEPER_HIGHEST_SALE_PERCENTAGE_DESCRIPTION);
+            MAXIMUM_RANGE = cfg.BindSyncedEntry(topSection, Constants.PEEPER_MAXIMUM_RANGE_KEY, Constants.PEEPER_MAXIMUM_RANGE_DEFAULT, Constants.PEEPER_MAXIMUM_RANGE_DESCRIPTION);
 
             ConfigManager.Register(this);
         }

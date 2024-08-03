@@ -9,7 +9,7 @@ namespace Peeper.Behaviour
         public override void Start()
         {
             base.Start();
-            maximumRange = 60;
+            maximumRange = Plugin.Config.MAXIMUM_RANGE;
             animator = GetComponent<Animator>();
         }
 

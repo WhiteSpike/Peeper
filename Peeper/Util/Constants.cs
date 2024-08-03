@@ -35,6 +35,10 @@ namespace Peeper.Util
         internal const int PEEPER_HIGHEST_SALE_PERCENTAGE_DEFAULT = 50;
         internal const string PEEPER_HIGHEST_SALE_PERCENTAGE_DESCRIPTION = "Maximum percentage of sale allowed when this item is selected for a sale.";
 
+        internal const string PEEPER_MAXIMUM_RANGE_KEY = "Maximum Spot Range";
+        internal const int PEEPER_MAXIMUM_RANGE_DEFAULT = 60;
+        internal const string PEEPER_MAXIMUM_RANGE_DESCRIPTION = "How far the Peeper item can spot a Coil-Head entity to stop it from moving";
+
         internal static readonly string PEEPER_SCAN_NODE_KEY = string.Format(ITEM_SCAN_NODE_KEY_FORMAT, Plugin.ITEM_NAME);
     }
 }
