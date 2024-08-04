@@ -50,7 +50,7 @@ namespace Peeper
                     }
                 }
             }
-            string assetDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "peeper");
+            string assetDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "peeperItem");
             AssetBundle bundle = AssetBundle.LoadFromFile(assetDir);
             string root = "Assets/Peeper/";
 
@@ -86,8 +86,6 @@ namespace Peeper
 
             TerminalNode infoNode = SetupInfoNode();
             Items.RegisterShopItem(shopItem: peeperItem, itemInfo: infoNode, price: peeperItem.creditsWorth);
-
-            bundle.Unload(unloadAllLoadedObjects: false);
 
             mls.LogInfo($"{Metadata.NAME} {Metadata.VERSION} has been loaded successfully.");
         }
