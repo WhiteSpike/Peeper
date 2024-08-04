@@ -87,6 +87,8 @@ namespace Peeper
             TerminalNode infoNode = SetupInfoNode();
             Items.RegisterShopItem(shopItem: peeperItem, itemInfo: infoNode, price: peeperItem.creditsWorth);
 
+            bundle.Unload(unloadAllLoadedObjects: false);
+
             mls.LogInfo($"{Metadata.NAME} {Metadata.VERSION} has been loaded successfully.");
         }
         internal static TerminalNode SetupInfoNode()
